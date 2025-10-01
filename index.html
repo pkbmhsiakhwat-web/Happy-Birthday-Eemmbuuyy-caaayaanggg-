@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+    .balloon { animation: float 10s linear infinite; }
+    .balloon:nth-child(2) { animation-delay: 2s; }
+    .balloon:nth-child(3) { animation-delay: 4s; }
+    .balloon:nth-child(4) { animation-delay: 6s; }
+
+    @keyframes confetti {
+      0% { transform: translateY(0) rotate(0); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+    .confetti { animation: confetti 6s linear infinite; }
+    .hidden { display: none; }
+  </style>
+  <link rel="icon" href="images/icon.png" type="image/png">
+</head>
+<body class="bg-gradient-to-b from-pink-100 via-pink-200 to-pink-300 
+             min-h-screen flex flex-col items-center overflow-x-hidden 
+             relative px-4 pt-10 sm:pt-16 pb-12">
+
+  <!-- Musik romantis lembut (tiup lilin) -->
+  <audio id="bg-music" loop>
+    <source src="audio/nadhif basalamah.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Musik romantis semangat (hadiah) -->
+  <audio id="gift-music" loop>
+    <source src="audio/my girl.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Balon -->
+<div class="absolute w-full h-full overflow-hidden -z-10">
+  <!-- Balon besar -->
+  <div class="balloon absolute left-5 bottom-0 bg-pink-400 rounded-full w-12 h-12 sm:w-16 sm:h-16 shadow-lg"></div>
+  <div class="balloon absolute left-1/4 bottom-0 bg-pink-300 rounded-full w-10 h-10 sm:w-14 sm:h-14 shadow-md"></div>
+  <div class="balloon absolute left-1/2 bottom-0 bg-pink-500 rounded-full w-12 h-12 sm:w-16 sm:h-16 shadow-lg"></div>
+  <div class="balloon absolute left-3/4 bottom-0 bg-pink-400 rounded-full w-14 h-14 sm:w-20 sm:h-20 shadow-lg"></div>
+
+  <!-- Balon kecil tambahan -->
+  <div class="balloon absolute left-[15%] bottom-0 bg-pink-200 rounded-full w-6 h-6 shadow"></div>
+  <div class="balloon absolute left-[35%] bottom-0 bg-pink-500 rounded-full w-7 h-7 shadow-md"></div>
+  <div class="balloon absolute left-[55%] bottom-0 bg-pink-300 rounded-full w-5 h-5 shadow"></div>
+  <div class="balloon absolute left-[80%] bottom-0 bg-pink-600 rounded-full w-8 h-8 shadow-md"></div>
+  <div class="balloon absolute left-[90%] bottom-0 bg-white rounded-full w-6 h-6 shadow"></div>
+</div>
+
+
+  <!-- Confetti -->
+  <div class="absolute w-full h-full pointer-events-none">
+    <div class="confetti absolute top-0 left-20 w-2 h-4 bg-pink-500"></div>
+    <div class="confetti absolute top-0 left-1/4 w-3 h-2 bg-pink-300"></div>
+    <div class="confetti absolute top-0 left-1/2 w-2 h-3 bg-pink-400"></div>
+    <div class="confetti absolute top-0 left-3/4 w-3 h-3 bg-pink-600"></div>
+    <div class="confetti absolute top-0 left-2/3 w-2 h-2 bg-white"></div>
+  </div>
+
+  <!-- Kartu ucapan utama -->
+  <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-6 sm:p-10 text-center max-w-md sm:max-w-lg border border-pink-300">
+    <h1 class="text-2xl sm:text-4xl font-extrabold text-pink-600 mb-4 animate-bounce drop-shadow-lg">
+      ✨🎉 Selamat Ulang Tahun 🎉✨
+    </h1>
+    <p class="text-base sm:text-lg text-gray-700 mb-6">
+      Semoga harimu penuh dengan <span class="text-pink-500 font-semibold">kebahagiaan</span>, 
+      <span class="text-pink-500 font-semibold">senyuman</span>, dan 
+      <span class="text-pink-500 font-semibold">cinta</span> 💖
+    </p>
+
+    <!-- Kue ulang tahun -->
+    <div class="mb-6 text-lg sm:text-2xl">
+      🎂 <span class="">🕯️🕯️🕯️</span> 🎂
+    </div>
+
+    <button id="tiupBtn" class="bg-gradient-to-r from-pink-400 to-pink-600 hover:from-pink-500 hover:to-pink-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition transform hover:scale-110">
+      🎂 Tiup Lilin 🎂
+    </button>
+  </div>
+
+  <!-- Foto orang yang ulang tahun -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 w-full max-w-6xl">
+    <!-- Card 1 -->
+    <div class="bg-white/90 p-4 rounded-2xl shadow-lg border border-pink-200 text-center">
+      <img src="images/satu.jpeg" alt="Foto 1" class="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-full mx-auto mb-3 border-4 border-pink-300 shadow-md">
+      <h3 class="text-pink-600 font-bold text-base sm:text-lg">Ci Eemmbuuyy caaayaanggg 🐼🌸</h3>
+      <p class="text-gray-600 text-sm">Semoga panjang umur, sehat selalu, dan makin cantik, makin banyak rezekinya, 
+        makin berkah hidupnya, dan semakin dimudahkan untuk mendapatkan yangg Eemmbuuyy caaayaanggg mauu ya caanntikkk 🐼💖💖💕</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white/90 p-4 rounded-2xl shadow-lg border border-pink-200 text-center">
+      <img src="images/tiga.jpeg" alt="Foto 2" class="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-full mx-auto mb-3 border-4 border-pink-300 shadow-md">
+      <h3 class="text-pink-600 font-bold text-base sm:text-lg">pyinncecc Eemmbuuyy caaayaanggg 🐼🎂</h3>
+      <p class="text-gray-600 text-sm"><strong>Selamat ulang tahun Eemmbuuyy caaayaanggg 🐼❤️💖🥰🎀✨</strong> semoga cita-citanya, semua kemauan Eemmbuuyy caaayaanggg,
+         dan wedding dream Eemmbuuyy caaayaanggg tercapai sesuai yang Eemmbuuyy caaayaanggg hayepinn 🐼❤️💖🥰🎀✨✨</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white/90 p-4 rounded-2xl shadow-lg border border-pink-200 text-center">
+      <img src="images/tujuh.jpeg" alt="Foto 3" class="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-full mx-auto mb-3 border-4 border-pink-300 shadow-md">
+      <h3 class="text-pink-600 font-bold text-base sm:text-lg">Cii bu bidadayii Eemmbuuyy 🐼🥰❤️💖</h3>
+      <p class="text-gray-600 text-sm"><strong>Happy birthday!! </strong>Semoga makin ceria dan bahagia selalu yaa Eemmbuuyy caaayaanggg 🐼🌈</p>
+    </div>
+  </div>
+
+  <!-- Tombol hadiah -->
+  <div class="mt-10 text-center">
+    <button id="giftBtn" class="bg-gradient-to-r from-yellow-400 to-pink-500 hover:from-yellow-500 hover:to-pink-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition transform hover:scale-110">
+      🎁 Hadiah buat Eemmbuuyy caaayaanggg 🐼
+    </button>
+  </div>
+
+  <!-- Popup Tiup Lilin -->
+  <div id="hiasanPopup" class="hidden fixed inset-0 flex justify-center items-center bg-black/70 z-50 px-4">
+    <div class="bg-white p-6 sm:p-10 rounded-3xl shadow-2xl text-center relative max-w-md sm:max-w-lg">
+      <button id="closePopup" class="absolute top-3 right-3 text-pink-600 font-bold text-xl">✖</button>
+      <h2 class="text-2xl sm:text-3xl font-bold text-pink-600 mb-4">🎊 Surprise! 🎊</h2>
+      <img src="images/delapan.jpeg" alt="Hiasan Ulang Tahun" class="mx-auto w-40 sm:w-60 mb-4">
+      <p class="text-gray-700">Semangat terus ya caantikk, Eemmbuuyy caaayaanggg itu wanita terhebat yang pernah beyy temuin 
+        wanita yang kuat menghadapi sifat beyy, kuat menghadapi capenya ngajar dan kuliah, <strong>Pokoknya beyy buaanggaa buaaannettt punyaaa Eemmbuuyy caaayaanggg</strong> 🐼❤️💖🥰🎀✨</p>
+    </div>
+  </div>
+
+  <!-- Popup Hadiah -->
+  <div id="giftPopup" class="hidden fixed inset-0 flex justify-center items-center bg-black/70 z-50 px-4">
+    <div class="bg-white p-6 sm:p-10 rounded-3xl shadow-2xl text-center relative max-w-md sm:max-w-lg">
+      <button id="closeGift" class="absolute top-3 right-3 text-pink-600 font-bold text-xl">✖</button>
+      <h2 class="text-2xl sm:text-3xl font-bold text-pink-600 mb-4">💝 Hadiah Spesial 💝</h2>
+      <img src="images/sembilan.jpeg" alt="Hadiah" class="mx-auto w-40 sm:w-60 mb-4 rounded-xl shadow-lg">
+      <p class="text-gray-700">Ini hadiah kecil dari beyy buat Eemmbuuyy caaayaanggg 🐼❤️💖 semoga selalu bahagia, penuh semangat, dan makin semangat buat ngajar dan kuliahnya 🥰✨🎁</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <p class="mt-10 text-xs sm:text-sm text-pink-800 text-center">Dibuat dengan 💕 beyy ndutt kecayangannyaa ci Eemmbuuyy caaayaanggg 🐼❤️💖🥰🎀✨</p>
+
+  <script>
+    const tiupBtn = document.getElementById('tiupBtn');
+    const giftBtn = document.getElementById('giftBtn');
+    const hiasanPopup = document.getElementById('hiasanPopup');
+    const giftPopup = document.getElementById('giftPopup');
+    const closePopup = document.getElementById('closePopup');
+    const closeGift = document.getElementById('closeGift');
+    const music = document.getElementById('bg-music');
+    const giftMusic = document.getElementById('gift-music');
+
+    // Tiup lilin
+    tiupBtn.addEventListener('click', () => {
+      hiasanPopup.classList.remove('hidden');
+      giftMusic.pause();
+      giftMusic.currentTime = 0;
+      music.play();
+    });
+    closePopup.addEventListener('click', () => {
+      hiasanPopup.classList.add('hidden');
+      music.pause();
+      music.currentTime = 0;
+    });
+
+    // Hadiah
+    giftBtn.addEventListener('click', () => {
+      giftPopup.classList.remove('hidden');
+      music.pause();
+      music.currentTime = 0;
+      giftMusic.play();
+    });
+    closeGift.addEventListener('click', () => {
+      giftPopup.classList.add('hidden');
+      giftMusic.pause();
+      giftMusic.currentTime = 0;
+    });
+  </script>
+
+</body>
+</html>
